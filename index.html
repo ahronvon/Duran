@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A student storybook library with thirty original one-chapter stories across different genres.">
+  <title>StoryVerse | Discover Your Next Story</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/stories-data.js" defer></script>
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="brand-mark">S</span><span>Story<span class="brand-accent">Verse</span></span></a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a class="active" href="index.html">Home</a>
+      <a href="#library">Library</a>
+      <a href="#about">About</a>
+    </nav>
+    <div class="header-actions"><button id="theme-toggle" class="icon-button" aria-label="Toggle dark or light mode">☾</button><a class="header-cta" href="#library">Explore stories</a></div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">YOUR NEXT FAVORITE READ</p>
+        <h1>Every story opens<br><em>a new world.</em></h1>
+        <p class="hero-text">Find romance, mystery, fantasy, adventure, and more in one cozy corner for readers.</p>
+        <a class="button primary hero-button" href="#library">Browse the library <span aria-hidden="true">→</span></a>
+        <div class="hero-stats"><div><strong>30</strong><span>original stories</span></div><div><strong>10+</strong><span>genres to explore</span></div><div><strong>1</strong><span>chapter each</span></div></div>
+      </div>
+      <div class="hero-art" aria-label="Featured storybook covers">
+        <div class="floating-note">A little imagination goes a long way ✦</div>
+        <img class="hero-cover hero-cover-back" src="images/moonlight-academy.svg" alt="Moonlight Academy cover">
+        <img class="hero-cover hero-cover-front" src="images/the-last-sunrise.svg" alt="The Last Sunrise cover">
+        <img class="hero-cover hero-cover-small" src="images/code-red.svg" alt="Code Red cover">
+      </div>
+    </section>
+    <section class="library-section" id="library">
+      <div class="section-heading"><div><p class="eyebrow">THE READING ROOM</p><h2>Find your next story</h2><p class="muted">Thirty stories. Thirty different worlds. Pick one and begin.</p></div><span class="library-count"><strong id="visible-count">30</strong> books</span></div>
+      <div class="filter-bar">
+        <label class="search-box"><span aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="Search title, author, or genre..." aria-label="Search stories"></label>
+        <label class="select-wrap"><span class="sr-only">Filter by genre</span><select id="genre-filter"><option value="all">All genres</option></select></label>
+      </div>
+      <div class="book-grid" id="book-grid">
+
+      <article class="book-card" data-title="the last sunrise" data-genre="romance" data-author="mira santos">
+        <a class="cover-link" href="stories/the-last-sunrise.html" aria-label="Read The Last Sunrise"><img class="cover" src="images/the-last-sunrise.svg" alt="Book cover for The Last Sunrise" loading="lazy"></a>
+        <div class="book-info">
+          <p class="genre-tag">Romance</p>
+          <h2>The Last Sunrise</h2>
+          <p class="author">by Mira Santos</p>
+          <p class="synopsis" id="synopsis-1">Two strangers meet every morning at a seaside café, each hiding a reason for watching the sunrise.</p>
+          <div class="card-actions">
+            <a class="button primary" href="stories/the-last-sunrise.html">Read Story</a>
+            <button class="button secondary synopsis-toggle" data-target="synopsis-1" aria-expanded="true">Hide synopsis</button>
+            <button class="like-button" aria-label="Like The Last Sunrise" aria-pressed="false">♡ <span>Like</span></button>
+            <button class="details-button" data-story="0">Details</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="book-card" data-title="moonlight academy" data-genre="fantasy" data-author="j. rivera">
+        <a class="cover-link" href="stories/moonlight-academy.html" aria-label="Read Moonlight Academy"><img class="cover" src="images/moonlight-academy.svg" alt="Book cover for Moonlight Academy" loading="lazy"></a>
+        <div class="book-info">
+          <p class="genre-tag">Fantasy</p>
+          <h2>Moonlight Academy</h2>
+          <p class="author">by J. Rivera</p>
+          <p class="synopsis" id="synopsis-2">A scholarship student discovers that the old academy teaches magic after dark.</p>
+          <div class="card-actions">
+            <a class="button primary" href="stories/moonlight-academy.html">Read Story</a>
+            <button class="button secondary synopsis-toggle" data-target="synopsis-2" aria-expanded="true">Hide synopsis</button>
+            <button class="like-button" aria-label="Like Moonlight Academy" aria-pressed="false">♡ <span>Like</span></button>
+            <button class="details-button" data-story="1">Details</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="book-card" data-title="code red" data-genre="mystery" data-author="ethan cruz">
+        <a class="cover-link" href="stories/code-red.html" aria-label="Read Code Red"><img class="cover" src="images/code-red.svg" alt="Book cover for Code Red" loading="lazy"></a>
+        <div class="book-info">
+          <p class="genre-tag">Mystery</p>
+          <h2>Code Red</h2>
+          <p class="author">by Ethan Cruz</p>
+          <p class="synopsis" id="synopsis-3">A student programmer finds a strange message buried in a school project.</p>
+          <div class="card-actions">
+            <a class="button primary" href="stories/code-red.html">Read Story</a>
+            <button class="button secondary synopsis-toggle" data-target="synopsis-3" aria-expanded="true">Hide synopsis</button>
+            <button class="like-button" aria-label="Like Code Red" aria-pressed="false">♡ <span>Like</span></button>
+            <button class="details-button" data-story="2">Details</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="book-card" data-title="the quiet hero" data-genre="inspirational" data-author="a. mendoza">
+        <a class="cover-link" href="stories/the-quiet-hero.html" aria-label="Read The Quiet Hero"><img class="cover" src="images/the-quiet-hero.svg" alt="Book cover for The Quiet Hero" loading="lazy"></a>
+        <div class="book-info">
+          <p class="genre-tag">Inspirational</p>
+          <h2>The Quiet Hero</h2>
+          <p class="author">by A. Mendoza</p>
+          <p class="synopsis" id="synopsis-4">A shy student learns that courage can be quiet and ordinary.</p>
+          <div class="card-actions">
+            <a class="button primary" href="stories/the-quiet-hero.html">Read Story</a>
+            <button class="button secondary synopsis-toggle" data-target="synopsis-4" aria-expanded="true">Hide synopsis</button>
+            <button class="like-button" aria-label="Like The Quiet Hero" aria-pressed="false">♡ <span>Like</span></button>
+            <button class="details-button" data-story="3">Details</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="book-card" data-title="beyond the fence" data-genre="drama" data-author="lia flores">
+        <a class="cover-link" href="stories/beyond-the-fence.html" aria-label="Read Beyond the Fence"><img class="cover" src="images/beyond-the-fence.svg" alt="Book cover for Beyond the Fence" loading="lazy"></a>
+        <div class="book-info">
+          <p class="genre-tag">Drama</p>
+          <h2>Beyond the Fence</h2>
+          <p class="author">by Lia Flores</p>
+          <p class="synopsis" id="synopsis-5">A family faces change when the home they love is threatened.</p>
+          <div class="card-actions">
+            <a class="button primary" href="stories/beyond-the-fence.html">Read Story</a>
+            <button class="button secondary synopsis-toggle" data-target="synopsis-5" aria-expanded="true">Hide synopsis</button>
+            <button class="like-button" aria-label="Like Beyond the Fence" aria-pressed="false">♡ <span>Like</span></button>
+            <button class="details-button" data-story="4">Details</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="book-card" data-title="static hearts" data-genre="science fiction" data-author="noah lim">
+        <a class="cover-link" href="stories/static-hearts.html" aria-label="Read Static Hearts"><img class="cover" src="images/static-hearts.svg" alt="Book cover for Static Hearts" loading="lazy"></a>
+        <div class="book-info">
+          <p class="genre-tag">Science Fiction</p>
+          <h2>Static Hearts</h2>
+          <p class="author">by Noah Lim</p>
+          <p class="synopsis" id="synopsis-6">A radio hobbyist receives a signal that seems to come from tomorrow.</p>
+          <div class="card-actions">
+            <a class="button primary" href="stories/static-hearts.html">Read Story</a>
+            <button class="button secondary synopsis-toggle" data-target="synopsis-6" aria-expanded="true">Hide synopsis</button>
+            <button class="like-button" aria-label="Like Static Hearts" aria-pressed="false">♡ <span>Like</span></button>
+            <button class="details-button" data-story="5">Details</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="book-card" data-title="paper planets" data-genre="coming of age" data-author="sofia reyes">
+        <a class="cover-link" href="stories/paper-planets.html" aria-label="Read Paper Planets"><img class="cover" src="images/paper-planets.svg" alt="Book cover for Paper Planets" loading="lazy"></a>
+        <div class="book-info">
+          <p class="genre-tag">Coming of Age</p>
+          <h2>Paper Planets</h2>
+          <p class="author">by Sofia Reyes</p>
+          <p class="synopsis" id="synopsis-7">A notebook of imagined worlds helps a teenager face real-life uncertainty.</p>
+          <div class="card-actions">
+            <a class="button primary" href="stories/paper-planets.html">Read Story</a>
+            <button class="button secondary synopsis-toggle" data-target="synopsis-7" aria-expanded="true">Hide synopsis</button>
+            <button class="like-button" aria-label="Like Paper Planets" aria-pressed="false">♡ <span>Like</span></button>
+            <button class="details-button" data-story="6">Details</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="book-card" data-title="the empty house" data-genre="horror" data-author="r. villanueva">
+        <a class="cover-link" href="stories/the-empty-house.html" aria-label="Read The Empty House"><img class="cover" src="images/the-empty-house.svg" alt="Book cover for The Empty House" loading="lazy"></a>
+        <div class="book-info">
+          <p class="genre-tag">Horror</p>
+          <h2>The Empty House</h2>
+          <p class="author">by R. Villanueva</p>
+          <p class="synopsis" id="synopsis-8">A weekend visit turns unsettling when the house seems to remember its guests.</p>
+          <div class="card-actions">
+            <a class="button primary" href="stories/the-empty-house.html">Read Story</a>
+            <button class="button secondary synopsis-toggle" data-target="synopsis-8" aria-expanded="true">Hide synopsis</button>
+            <button class="like-button" aria-label="Like The Empty House" aria-pressed="false">♡ <span>Like</span></button>
+            <button class="details-button" data-story="7">Details</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="book-card" data-title="second chance café" data-genre="slice of life" data-author="bea navarro">
+        <a class="cover-link" href="stories/second-chance-café.html" aria-label="Read Second Chance Café"><img class="cover" src="images/second-chance-café.svg" alt="Book cover for Second Chance Café" loading="lazy"></a>
+        <div class="book-info">
+          <p class="genre-tag">Slice of Life</p>
+          <h2>Second Chance Café</h2>
+          <p class="author">by Bea Navarro</p>
+          <p class="synopsis" id="synopsis-9">A struggling café becomes a meeting place for people starting over.</p>
+          <div class="card-actions">
+            <a class="button primary" href="stories/second-chance-café.html">Read Story</a>
+            <button class="button secondary synopsis-toggle" data-target="synopsis-9" aria-expanded="true">Hide synopsis</button>
+            <button class="like-button" aria-label="Like Second Chance Café" aria-pressed="false">♡ <span>Like</span></button>
+            <button class="details-button" data-story="8">Details</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="book-card" data-title="the captain’s promise" data-genre="adventure" data-author="luis dela cruz">
+        <a class="cover-link" href="stories/the-captain-s-promise.html" aria-label="Read The Captain’s Promise"><img class="cover" src="images/the-captain-s-promise.svg" alt="Book cover for The Captain’s Promise" loading="lazy"></a>
+        <div class="book-info">
+          <p class="genre-tag">Adventure</p>
+          <h2>The Captain’s Promise</h2>
+          <p class="author">by Luis Dela Cruz</p>
+          <p class="synopsis" id="synopsis-10">A young sailor must guide his crew through a dangerous passage.</p>
+          <div class="card-actions">
+            <a class="button primary" href="stories/the-captain-s-promise.html">Read Story</a>
+            <button class="button secondary synopsis-toggle" data-target="synopsis-10" aria-expanded="true">Hide synopsis</button>
+            <button class="like-button" aria-label="Like The Captain’s Promise" aria-pressed="false">♡ <span>Like</span></button>
+            <button class="details-button" data-story="9">Details</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="book-card" data-title="a garden for tomorrow" data-genre="environmental" data-author="nina garcia">
+        <a class="cover-link" href="stories/a-garden-for-tomorrow.html" aria-label="Read A Garden for Tomorrow"><img class="cover" src="images/a-garden-for-tomorrow.svg" alt="Book cover for A Garden for Tomorrow" loading="lazy"></a>
+        <div class="book-info">
+          <p class="genre-tag">Environmental</p>
+          <h2>A Garden for Tomorrow</h2>
+          <p class="author">by Nina Garcia</p>
+          <p class="synopsis" id="synopsis-11">A community garden brings neighbors together to repair a neglected lot.</p>
+          <div class="card-actions">
+            <a class="button primary" href="stories/a-garden-for-tomorrow.html">Read Story</a>
+            <button class="button secondary synopsis-toggle" data-target="synopsis-11" aria-expanded="true">Hide synopsis</button>
+            <button class="like-button" aria-label="Like A Garden for Tomorrow" aria-pressed="false">♡ <span>Like</span></button>
+            <button class="details-button" data-story="10">Details</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="book-card" data-title="the missing photograph" data-genre="thriller" data-author="caleb tan">
+        <a class="cover-link" href="stories/the-missing-photograph.html" aria-label="Read The Missing Photograph"><img class="cover" src="images/the-missing-photograph.svg" alt="Book cover for The Missing Photograph" loading="lazy"></a>
+        <div class="book-info">
+          <p class="genre-tag">Thriller</p>
+          <h2>The Missing Photograph</h2>
+          <p class="author">by Caleb Tan</p>
+          <p class="synopsis" id="synopsis-12">A family photo disappears, revealing a secret hidden for decades.</p>
+          <div class="card-actions">
+            <a class="button primary" href="stories/the-missing-photograph.html">Read Story</a>
+            <button class="button secondary synopsis-toggle" data-target="synopsis-12" aria-expanded="true">Hide synopsis</button>
+            <button class="like-button" aria-label="Like The Missing Photograph" aria-pressed="false">♡ <span>Like</span></button>
+            <button class="details-button" data-story="11">Details</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="book-card" data-title="letters to tomorrow" data-genre="poetry" data-author="amara lee">
+        <a class="cover-link" href="stories/letters-to-tomorrow.html" aria-label="Read Letters to Tomorrow"><img class="cover" src="images/letters-to-tomorrow.svg" alt="Book cover for Letters to Tomorrow" loading="lazy"></a>
+        <div class="book-info">
+          <p class="genre-tag">Poetry</p>
+          <h2>Letters to Tomorrow</h2>
+          <p class="author">by Amara Lee</p>
+          <p class="synopsis" id="synopsis-13">A student writes letters to her future self while learning to trust the present.</p>
+          <div class="card-actions">
+            <a class="button primary" href="stories/letters-to-tomorrow.html">Read Story</a>
+            <button class="button secondary synopsis-toggle" data-target="synopsis-13" aria-expanded="true">Hide synopsis</button>
+            <button class="like-button" aria-label="Like Letters to Tomorrow" aria-pressed="false">♡ <span>Like</span></button>
+            <button class="details-button" data-story="12">Details</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="book-card" data-title="the last goal" data-genre="sports" data-author="paolo reyes">
+        <a class="cover-link" href="stories/the-last-goal.html" aria-label="Read The Last Goal"><img class="cover" src="images/the-last-goal.svg" alt="Book cover for The Last Goal" loading="lazy"></a>
+        <div class="book-info">
+          <p class="genre-tag">Sports</p>
+          <h2>The Last Goal</h2>
+          <p class="author">by Paolo Reyes</p>
+          <p class="synopsis" id="synopsis-14">An overlooked football player gets one final chance to prove himself.</p>
+          <div class="card-actions">
+            <a class="button primary" href="stories/the-last-goal.html">Read Story</a>
+            <button class="button secondary synopsis-toggle" data-target="synopsis-14" aria-expanded="true">Hide synopsis</button>
+            <button class="like-button" aria-label="Like The Last Goal" aria-pressed="false">♡ <span>Like</span></button>
+            <button class="details-button" data-story="13">Details</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="book-card" data-title="city of echoes" data-genre="dystopian" data-author="t. aquino">
+        <a class="cover-link" href="stories/city-of-echoes.html" aria-label="Read City of Echoes"><img class="cover" src="images/city-of-echoes.svg" alt="Book cover for City of Echoes" loading="lazy"></a>
+        <div class="book-info">
+          <p class="genre-tag">Dystopian</p>
+          <h2>City of Echoes</h2>
+          <p class="author">by T. Aquino</p>
+          <p class="synopsis" id="synopsis-15">In a city where every conversation is recorded, one girl discovers silence.</p>
+          <div class="card-actions">
+            <a class="button primary" href="stories/city-of-echoes.html">Read Story</a>
+            <button class="button secondary synopsis-toggle" data-target="synopsis-15" aria-expanded="true">Hide synopsis</button>
+            <button class="like-button" aria-label="Like City of Echoes" aria-pressed="false">♡ <span>Like</span></button>
+            <button class="details-button" data-story="14">Details</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="book-card" data-title="the little inventor" data-genre="comedy" data-author="gabriel uy">
+        <a class="cover-link" href="stories/the-little-inventor.html" aria-label="Read The Little Inventor"><img class="cover" src="images/the-little-inventor.svg" alt="Book cover for The Little Inventor" loading="lazy"></a>
+        <div class="book-info">
+          <p class="genre-tag">Comedy</p>
+          <h2>The Little Inventor</h2>
+          <p class="author">by Gabriel Uy</p>
+          <p class="synopsis" id="synopsis-16">A student’s inventions solve small problems in very unexpected ways.</p>
+          <div class="card-actions">
+            <a class="button primary" href="stories/the-little-inventor.html">Read Story</a>
+            <button class="button secondary synopsis-toggle" data-target="synopsis-16" aria-expanded="true">Hide synopsis</button>
+            <button class="like-button" aria-label="Like The Little Inventor" aria-pressed="false">♡ <span>Like</span></button>
+            <button class="details-button" data-story="15">Details</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="book-card" data-title="under one roof" data-genre="family" data-author="mika torres">
+        <a class="cover-link" href="stories/under-one-roof.html" aria-label="Read Under One Roof"><img class="cover" src="images/under-one-roof.svg" alt="Book cover for Under One Roof" loading="lazy"></a>
+        <div class="book-info">
+          <p class="genre-tag">Family</p>
+          <h2>Under One Roof</h2>
+          <p class="author">by Mika Torres</p>
+          <p class="synopsis" id="synopsis-17">Three siblings learn to share responsibility when their parents work away from home.</p>
+          <div class="card-actions">
+            <a class="button primary" href="stories/under-one-roof.html">Read Story</a>
+            <button class="button secondary synopsis-toggle" data-target="synopsis-17" aria-expanded="true">Hide synopsis</button>
+            <button class="like-button" aria-label="Like Under One Roof" aria-pressed="false">♡ <span>Like</span></button>
+            <button class="details-button" data-story="16">Details</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="book-card" data-title="the clockmaker’s secret" data-genre="steampunk" data-author="felix ramos">
+        <a class="cover-link" href="stories/the-clockmaker-s-secret.html" aria-label="Read The Clockmaker’s Secret"><img class="cover" src="images/the-clockmaker-s-secret.svg" alt="Book cover for The Clockmaker’s Secret" loading="lazy"></a>
+        <div class="book-info">
+          <p class="genre-tag">Steampunk</p>
+          <h2>The Clockmaker’s Secret</h2>
+          <p class="author">by Felix Ramos</p>
+          <p class="synopsis" id="synopsis-18">An apprentice discovers that a clockmaker’s machines can pause time.</p>
+          <div class="card-actions">
+            <a class="button primary" href="stories/the-clockmaker-s-secret.html">Read Story</a>
+            <button class="button secondary synopsis-toggle" data-target="synopsis-18" aria-expanded="true">Hide synopsis</button>
+            <button class="like-button" aria-label="Like The Clockmaker’s Secret" aria-pressed="false">♡ <span>Like</span></button>
+            <button class="details-button" data-story="17">Details</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="book-card" data-title="whispers in the library" data-genre="paranormal" data-author="hannah chua">
+        <a class="cover-link" href="stories/whispers-in-the-library.html" aria-label="Read Whispers in the Library"><img class="cover" src="images/whispers-in-the-library.svg" alt="Book cover for Whispers in the Library" loading="lazy"></a>
+        <div class="book-info">
+          <p class="genre-tag">Paranormal</p>
+          <h2>Whispers in the Library</h2>
+          <p class="author">by Hannah Chua</p>
+          <p class="synopsis" id="synopsis-19">A library volunteer hears a voice coming from a book with blank pages.</p>
+          <div class="card-actions">
+            <a class="button primary" href="stories/whispers-in-the-library.html">Read Story</a>
+            <button class="button secondary synopsis-toggle" data-target="synopsis-19" aria-expanded="true">Hide synopsis</button>
+            <button class="like-button" aria-label="Like Whispers in the Library" aria-pressed="false">♡ <span>Like</span></button>
+            <button class="details-button" data-story="18">Details</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="book-card" data-title="road to somewhere" data-genre="travel" data-author="dylan perez">
+        <a class="cover-link" href="stories/road-to-somewhere.html" aria-label="Read Road to Somewhere"><img class="cover" src="images/road-to-somewhere.svg" alt="Book cover for Road to Somewhere" loading="lazy"></a>
+        <div class="book-info">
+          <p class="genre-tag">Travel</p>
+          <h2>Road to Somewhere</h2>
+          <p class="author">by Dylan Perez</p>
+          <p class="synopsis" id="synopsis-20">Two friends take an unplanned trip after missing the last bus home.</p>
+          <div class="card-actions">
+            <a class="button primary" href="stories/road-to-somewhere.html">Read Story</a>
+            <button class="button secondary synopsis-toggle" data-target="synopsis-20" aria-expanded="true">Hide synopsis</button>
+            <button class="like-button" aria-label="Like Road to Somewhere" aria-pressed="false">♡ <span>Like</span></button>
+            <button class="details-button" data-story="19">Details</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="book-card" data-title="the red umbrella" data-genre="historical fiction" data-author="isabel cruz">
+        <a class="cover-link" href="stories/the-red-umbrella.html" aria-label="Read The Red Umbrella"><img class="cover" src="images/the-red-umbrella.svg" alt="Book cover for The Red Umbrella" loading="lazy"></a>
+        <div class="book-info">
+          <p class="genre-tag">Historical Fiction</p>
+          <h2>The Red Umbrella</h2>
+          <p class="author">by Isabel Cruz</p>
+          <p class="synopsis" id="synopsis-21">A red umbrella connects two families across generations.</p>
+          <div class="card-actions">
+            <a class="button primary" href="stories/the-red-umbrella.html">Read Story</a>
+            <button class="button secondary synopsis-toggle" data-target="synopsis-21" aria-expanded="true">Hide synopsis</button>
+            <button class="like-button" aria-label="Like The Red Umbrella" aria-pressed="false">♡ <span>Like</span></button>
+            <button class="details-button" data-story="20">Details</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="book-card" data-title="a song for sunday" data-genre="music" data-author="jae villanueva">
+        <a class="cover-link" href="stories/a-song-for-sunday.html" aria-label="Read A Song for Sunday"><img class="cover" src="images/a-song-for-sunday.svg" alt="Book cover for A Song for Sunday" loading="lazy"></a>
+        <div class="book-info">
+          <p class="genre-tag">Music</p>
+          <h2>A Song for Sunday</h2>
+          <p class="author">by Jae Villanueva</p>
+          <p class="synopsis" id="synopsis-22">A nervous singer prepares to perform at a neighborhood celebration.</p>
+          <div class="card-actions">
+            <a class="button primary" href="stories/a-song-for-sunday.html">Read Story</a>
+            <button class="button secondary synopsis-toggle" data-target="synopsis-22" aria-expanded="true">Hide synopsis</button>
+            <button class="like-button" aria-label="Like A Song for Sunday" aria-pressed="false">♡ <span>Like</span></button>
+            <button class="details-button" data-story="21">Details</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="book-card" data-title="the borrowed crown" data-genre="fairy tale" data-author="k. bautista">
+        <a class="cover-link" href="stories/the-borrowed-crown.html" aria-label="Read The Borrowed Crown"><img class="cover" src="images/the-borrowed-crown.svg" alt="Book cover for The Borrowed Crown" loading="lazy"></a>
+        <div class="book-info">
+          <p class="genre-tag">Fairy Tale</p>
+          <h2>The Borrowed Crown</h2>
+          <p class="author">by K. Bautista</p>
+          <p class="synopsis" id="synopsis-23">A village baker is mistaken for a missing royal heir.</p>
+          <div class="card-actions">
+            <a class="button primary" href="stories/the-borrowed-crown.html">Read Story</a>
+            <button class="button secondary synopsis-toggle" data-target="synopsis-23" aria-expanded="true">Hide synopsis</button>
+            <button class="like-button" aria-label="Like The Borrowed Crown" aria-pressed="false">♡ <span>Like</span></button>
+            <button class="details-button" data-story="22">Details</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="book-card" data-title="night shift" data-genre="crime" data-author="ramon silva">
+        <a class="cover-link" href="stories/night-shift.html" aria-label="Read Night Shift"><img class="cover" src="images/night-shift.svg" alt="Book cover for Night Shift" loading="lazy"></a>
+        <div class="book-info">
+          <p class="genre-tag">Crime</p>
+          <h2>Night Shift</h2>
+          <p class="author">by Ramon Silva</p>
+          <p class="synopsis" id="synopsis-24">A security guard notices a pattern in a series of late-night break-ins.</p>
+          <div class="card-actions">
+            <a class="button primary" href="stories/night-shift.html">Read Story</a>
+            <button class="button secondary synopsis-toggle" data-target="synopsis-24" aria-expanded="true">Hide synopsis</button>
+            <button class="like-button" aria-label="Like Night Shift" aria-pressed="false">♡ <span>Like</span></button>
+            <button class="details-button" data-story="23">Details</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="book-card" data-title="the kindness project" data-genre="school life" data-author="chloe martin">
+        <a class="cover-link" href="stories/the-kindness-project.html" aria-label="Read The Kindness Project"><img class="cover" src="images/the-kindness-project.svg" alt="Book cover for The Kindness Project" loading="lazy"></a>
+        <div class="book-info">
+          <p class="genre-tag">School Life</p>
+          <h2>The Kindness Project</h2>
+          <p class="author">by Chloe Martin</p>
+          <p class="synopsis" id="synopsis-25">A class assignment to perform random acts of kindness changes a friend group.</p>
+          <div class="card-actions">
+            <a class="button primary" href="stories/the-kindness-project.html">Read Story</a>
+            <button class="button secondary synopsis-toggle" data-target="synopsis-25" aria-expanded="true">Hide synopsis</button>
+            <button class="like-button" aria-label="Like The Kindness Project" aria-pressed="false">♡ <span>Like</span></button>
+            <button class="details-button" data-story="24">Details</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="book-card" data-title="beneath the waves" data-genre="ocean adventure" data-author="andre flores">
+        <a class="cover-link" href="stories/beneath-the-waves.html" aria-label="Read Beneath the Waves"><img class="cover" src="images/beneath-the-waves.svg" alt="Book cover for Beneath the Waves" loading="lazy"></a>
+        <div class="book-info">
+          <p class="genre-tag">Ocean Adventure</p>
+          <h2>Beneath the Waves</h2>
+          <p class="author">by Andre Flores</p>
+          <p class="synopsis" id="synopsis-26">A young diver searches for a lost research case near a reef.</p>
+          <div class="card-actions">
+            <a class="button primary" href="stories/beneath-the-waves.html">Read Story</a>
+            <button class="button secondary synopsis-toggle" data-target="synopsis-26" aria-expanded="true">Hide synopsis</button>
+            <button class="like-button" aria-label="Like Beneath the Waves" aria-pressed="false">♡ <span>Like</span></button>
+            <button class="details-button" data-story="25">Details</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="book-card" data-title="the new neighbor" data-genre="romantic comedy" data-author="ella mendoza">
+        <a class="cover-link" href="stories/the-new-neighbor.html" aria-label="Read The New Neighbor"><img class="cover" src="images/the-new-neighbor.svg" alt="Book cover for The New Neighbor" loading="lazy"></a>
+        <div class="book-info">
+          <p class="genre-tag">Romantic Comedy</p>
+          <h2>The New Neighbor</h2>
+          <p class="author">by Ella Mendoza</p>
+          <p class="synopsis" id="synopsis-27">A mistaken delivery brings two neighbors together.</p>
+          <div class="card-actions">
+            <a class="button primary" href="stories/the-new-neighbor.html">Read Story</a>
+            <button class="button secondary synopsis-toggle" data-target="synopsis-27" aria-expanded="true">Hide synopsis</button>
+            <button class="like-button" aria-label="Like The New Neighbor" aria-pressed="false">♡ <span>Like</span></button>
+            <button class="details-button" data-story="26">Details</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="book-card" data-title="the paper bridge" data-genre="realistic fiction" data-author="miguel santos">
+        <a class="cover-link" href="stories/the-paper-bridge.html" aria-label="Read The Paper Bridge"><img class="cover" src="images/the-paper-bridge.svg" alt="Book cover for The Paper Bridge" loading="lazy"></a>
+        <div class="book-info">
+          <p class="genre-tag">Realistic Fiction</p>
+          <h2>The Paper Bridge</h2>
+          <p class="author">by Miguel Santos</p>
+          <p class="synopsis" id="synopsis-28">A student balances schoolwork and family duties while preparing for an exam.</p>
+          <div class="card-actions">
+            <a class="button primary" href="stories/the-paper-bridge.html">Read Story</a>
+            <button class="button secondary synopsis-toggle" data-target="synopsis-28" aria-expanded="true">Hide synopsis</button>
+            <button class="like-button" aria-label="Like The Paper Bridge" aria-pressed="false">♡ <span>Like</span></button>
+            <button class="details-button" data-story="27">Details</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="book-card" data-title="stars over barangay" data-genre="community" data-author="rhea castillo">
+        <a class="cover-link" href="stories/stars-over-barangay.html" aria-label="Read Stars Over Barangay"><img class="cover" src="images/stars-over-barangay.svg" alt="Book cover for Stars Over Barangay" loading="lazy"></a>
+        <div class="book-info">
+          <p class="genre-tag">Community</p>
+          <h2>Stars Over Barangay</h2>
+          <p class="author">by Rhea Castillo</p>
+          <p class="synopsis" id="synopsis-29">Young volunteers organize a neighborhood stargazing night.</p>
+          <div class="card-actions">
+            <a class="button primary" href="stories/stars-over-barangay.html">Read Story</a>
+            <button class="button secondary synopsis-toggle" data-target="synopsis-29" aria-expanded="true">Hide synopsis</button>
+            <button class="like-button" aria-label="Like Stars Over Barangay" aria-pressed="false">♡ <span>Like</span></button>
+            <button class="details-button" data-story="28">Details</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="book-card" data-title="the final level" data-genre="gaming" data-author="vincent ong">
+        <a class="cover-link" href="stories/the-final-level.html" aria-label="Read The Final Level"><img class="cover" src="images/the-final-level.svg" alt="Book cover for The Final Level" loading="lazy"></a>
+        <div class="book-info">
+          <p class="genre-tag">Gaming</p>
+          <h2>The Final Level</h2>
+          <p class="author">by Vincent Ong</p>
+          <p class="synopsis" id="synopsis-30">A gamer discovers that teamwork matters more than a perfect score.</p>
+          <div class="card-actions">
+            <a class="button primary" href="stories/the-final-level.html">Read Story</a>
+            <button class="button secondary synopsis-toggle" data-target="synopsis-30" aria-expanded="true">Hide synopsis</button>
+            <button class="like-button" aria-label="Like The Final Level" aria-pressed="false">♡ <span>Like</span></button>
+            <button class="details-button" data-story="29">Details</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="book-card" data-title="when the rain stops" data-genre="hope" data-author="mae dizon">
+        <a class="cover-link" href="stories/when-the-rain-stops.html" aria-label="Read When the Rain Stops"><img class="cover" src="images/when-the-rain-stops.svg" alt="Book cover for When the Rain Stops" loading="lazy"></a>
+        <div class="book-info">
+          <p class="genre-tag">Hope</p>
+          <h2>When the Rain Stops</h2>
+          <p class="author">by Mae Dizon</p>
+          <p class="synopsis" id="synopsis-31">After a difficult year, a student finds a fresh start through a small promise.</p>
+          <div class="card-actions">
+            <a class="button primary" href="stories/when-the-rain-stops.html">Read Story</a>
+            <button class="button secondary synopsis-toggle" data-target="synopsis-31" aria-expanded="true">Hide synopsis</button>
+            <button class="like-button" aria-label="Like When the Rain Stops" aria-pressed="false">♡ <span>Like</span></button>
+            <button class="details-button" data-story="30">Details</button>
+          </div>
+        </div>
+      </article>
+      </div>
+      <p class="empty-state" id="empty-state" hidden>No stories match your search. Try another title or genre.</p>
+    </section>
+    <section class="about-section" id="about"><div class="about-icon">✦</div><div><p class="eyebrow">MADE FOR CURIOUS READERS</p><h2>One chapter is all it takes to begin.</h2><p>StoryVerse is a student-made storybook website featuring original short fiction in different genres. Settle in, choose a cover, and enjoy the story.</p></div><a class="button secondary" href="#library">Back to library ↑</a></section>
+  </main>
+  <footer class="site-footer"><a class="brand" href="index.html"><span class="brand-mark">S</span><span>Story<span class="brand-accent">Verse</span></span></a><p>Made with imagination and a love for stories.</p><p>© <span id="year"></span> StoryVerse · Student project</p></footer>
+  <dialog id="details-dialog" class="details-dialog"><button class="dialog-close" id="dialog-close" aria-label="Close details">×</button><div id="dialog-content"></div></dialog>
+</body>
+</html>
